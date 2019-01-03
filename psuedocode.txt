@@ -1,0 +1,115 @@
+var entries = [];
+var total = 0;
+
+- Declare entries variable as an empty array. 
+- Declare total variable as 0.
+
+
+var temp = '';
+$("button").on('click', function() {
+ 	var val = $(this).text(); 
+
+- Declare temp variable as equal to blank string.
+
+- Not sure how the dollar sign works but it looks like the jQuery on() method is being applied to all buttons; the event of clicking a button will run function(). 
+
+- Declare the variable val as the text of the clicked button element in this object. 
+
+
+if (!isNaN(val) || val === '.') {
+    temp += val;
+    $("#answer").val(temp.substring(0,10)); 
+
+- If val is a number or is a decimal point, add it to temp variable. 
+
+
+  // Got some symbol other than equals, add temp to our entries
+  // then add our current symbol and clear temp
+  } else if (val === 'AC') {
+    entries = [];
+    temp = '';
+    total = 0;
+    $("#answer").val('')
+
+- If val is strictly equal to 'AC', entries array is empty, set temp to blank and set total to 0. 
+
+
+  // Clear last entry
+  } else if (val === 'CE') {
+    temp = '';
+    $("#answer").val('')
+
+- If val is equal to 'CE', set temp to blank. 
+
+    
+  // Change multiply symbol to work with eval
+  } else if (val === 'x') {
+    entries.push(temp);
+    entries.push('*');
+    temp = '';
+
+- If val is equal to 'x', push temp to entries and push * to entries array and then set temp to empty. 
+
+    
+  // Change divide symbol to work with eval
+  } else if (val === '÷') {
+    entries.push(temp);
+    entries.push('/');
+    temp = '';
+
+- If val is equal to '÷', push temp to entries and push '/' to entries array and then set tempt to empty. 
+
+
+  // Got the equals sign, perform calculation
+  } else if (val === '=') {
+  	entries.push(temp);
+
+- If val is equal to '=', add temp to entries array. 
+
+
+    var nt = Number(entries[0]);
+    for (var i = 1; i < entries.length; i++) {
+      var nextNum = Number(entries[i+1])
+      var symbol = entries[i];
+      
+      if (symbol === '+') { nt += nextNum; } 
+      else if (symbol === '-') { nt -= nextNum; } 
+      else if (symbol === '*') { nt *= nextNum; } 
+      else if (symbol === '/') { nt /= nextNum; }
+      
+      i++;
+    }
+
+- Declare variable nt which is equal to the first item of the entries array converted to a number for calculation. 
+- Loop through each item in entries array starting at the second item. 
+- Declare nextNum variable as equal to next array item + 1. 
+- Declare variable symbol as entries array item. 
+
+- If symbol is +, add nextNum to nt; if symbol is -, remove nextNum from nt; if symbol is *, multiply nextNum and nt; if symbol is /, divide nt by nextNum. 
+
+    
+    // Swap the '-' symbol so text input handles it correctly
+    if (nt < 0) {
+      nt = Math.abs(nt) + '-';
+    } 
+
+- If nt is less than 0, make it an absolute number then add '-'. 
+
+
+    $("#answer").val(nt);
+		entries = [];
+    temp = '';
+
+- Set value of "#answer" input field as nt.    
+    
+  // Push number
+  } else {
+    entries.push(temp);
+    entries.push(val);
+    temp = '';
+  } 
+
+- Otherwise, push temp to entries array and push val to entries array then set temp to ''. 
+
+
+});
