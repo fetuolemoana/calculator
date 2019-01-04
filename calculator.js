@@ -6,7 +6,7 @@
 
 
 
-  console.log('button click'); 
+
 
 
   // All the functions that will calculate input data 
