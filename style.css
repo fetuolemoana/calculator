@@ -1,0 +1,19 @@
+
+.container {
+  text-align: center; 
+  padding: 50px;
+  background: azure;
+}
+
+.calculator {
+  display: inline-block; 
+  max-width: 7em;
+  background: plum;
+  border-radius: 1em; 
+}
+
+.calculator__display {
+  background: lightgrey; 
+  border-top-left-radius: 1em; 
+  height: 20px; 
+}
