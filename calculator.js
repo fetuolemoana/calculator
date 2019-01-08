@@ -23,10 +23,14 @@ keys.addEventListener('click', e => {
 
 // All the functions that will handle input data 
 
-  // Recognise number key
+  // If the key does not have data action and if displayed number is 0, replace with the pressed key content. Otherwise, add the pressed key to the displayed number already there.  
 
    if (!action) {
-     console.log('number key!') 
+     if (displayedNum === '0') {
+       display.textContent = keyContent
+     } else {
+       display.textContent = displayedNum + keyContent
+     }
    }
 
   // Recognise operator keys 
