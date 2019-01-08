@@ -14,18 +14,24 @@ keys.addEventListener('click', e => {
 
 // All the functions that will handle input data 
 
-// Recognise number key
+  // Recognise number key
 
    if (!action) {
      console.log('number key!') 
    }
 
-   // Recognise operator keys 
+  // Recognise operator keys 
 
   if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
     console.log('operator key!')
   }
+
+  // Recognise decimal key 
   
+  if (action === 'decimal') {
+    console.log('decimal key!')
+  }
+
  }
 })
 
