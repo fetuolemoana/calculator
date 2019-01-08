@@ -27,10 +27,18 @@ keys.addEventListener('click', e => {
   }
 
   // Recognise decimal key 
-  
+
   if (action === 'decimal') {
     console.log('decimal key!')
   }
+
+  // Recognise AC / clear key 
+
+  if (action === 'clear') {
+    console.log('clear key!')
+  }
+
+  
 
  }
 })
