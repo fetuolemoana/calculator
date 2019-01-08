@@ -50,7 +50,7 @@ keys.addEventListener('click', e => {
 
   if (action === 'clear') {
     // Make displayed number 0 
-    console.log('clear key!')
+    display.textContent = 0
   }
 
   // Recognise the equals key 
