@@ -41,6 +41,8 @@ Array.from(key.parentNode.children)
 
   if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
     key.classList.add('is-depressed')
+    // Add custom attribute 
+    calculator.dataset.previousKeyType = 'operator'
   }
 
   // Recognise decimal key and add it to the displayed number. 
