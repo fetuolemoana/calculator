@@ -23,6 +23,10 @@ keys.addEventListener('click', e => {
 
 // All the functions that will handle input data 
 
+// Remove .is-depressed from all keys by creating an array from the children of key. Need to understand how .forEach works. 
+Array.from(key.parentNode.children) 
+  .forEach(k => k.classList.remove('is-depressed'))
+
   // If the key does not have data action and if displayed number is 0, replace with the pressed key content. Otherwise, add the pressed key to the displayed number already there.  
 
    if (!action) {
