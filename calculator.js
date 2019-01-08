@@ -36,7 +36,7 @@ keys.addEventListener('click', e => {
   // Recognise operator keys 
 
   if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
-    console.log('operator key!')
+    key.classList.add('is-depressed')
   }
 
   // Recognise decimal key and add it to the displayed number. 
