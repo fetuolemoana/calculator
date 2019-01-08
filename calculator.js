@@ -38,7 +38,11 @@ keys.addEventListener('click', e => {
     console.log('clear key!')
   }
 
-  
+  // Recognise the equals key 
+
+  if (action === 'calculate') {
+    console.log('equals key!')
+  }
 
  }
 })
