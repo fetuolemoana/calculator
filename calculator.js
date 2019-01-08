@@ -4,13 +4,22 @@
 
 // Insert event listener for calclator button click 
 
-const calculator = document.querySelector('.calculator')
+const calculator = document.querySelector('.calculator') 
+
+// Add display variable 
+
+const display = document.querySelector('.calculator__display')
+
 const keys = calculator.querySelector('.calculator__keys')
 
 keys.addEventListener('click', e => {
  if (e.target.matches('button')) {
    const key = e.target 
    const action = key.dataset.action 
+
+   // Add variables for key content and for displayed number 
+   const keyContent = key.textContent 
+   const displayedNum = display.textContent 
 
 // All the functions that will handle input data 
 
