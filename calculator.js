@@ -39,10 +39,10 @@ keys.addEventListener('click', e => {
     console.log('operator key!')
   }
 
-  // Recognise decimal key 
+  // Recognise decimal key and add it to the displayed number. 
 
   if (action === 'decimal') {
-    console.log('decimal key!')
+    display.textContent = displayedNum + '.'
   }
 
   // Recognise AC / clear key 
