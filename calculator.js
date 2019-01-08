@@ -12,12 +12,21 @@ keys.addEventListener('click', e => {
    const key = e.target 
    const action = key.dataset.action 
 
+// All the functions that will handle input data 
+
+// Recognise number key
+
    if (!action) {
      console.log('number key!') 
    }
+
+   // Recognise operator keys 
+
+  if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
+    console.log('operator key!')
+  }
+  
  }
 })
-
-  // All the functions that will handle input data 
 
 
