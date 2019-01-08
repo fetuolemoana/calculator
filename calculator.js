@@ -41,19 +41,22 @@ keys.addEventListener('click', e => {
 
   // Recognise decimal key and add it to the displayed number. 
 
-  if (action === 'decimal') {
+  if (action === 'decimal') { 
+    // Need to stop more than one decimal being added to displayed character. 
     display.textContent = displayedNum + '.'
   }
 
   // Recognise AC / clear key 
 
   if (action === 'clear') {
+    // Make displayed number 0 
     console.log('clear key!')
   }
 
   // Recognise the equals key 
 
   if (action === 'calculate') {
+    // Calculate! 
     console.log('equals key!')
   }
 
