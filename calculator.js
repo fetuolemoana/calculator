@@ -43,7 +43,12 @@ keys.addEventListener('click', e => {
 
   if (action === 'decimal') { 
     // Need to stop more than one decimal being added to displayed character. 
+    if (displayedNum.includes('.')) {
+      // Prevent an extra decimal being added. 
+      display.textContent  
+    } else {
     display.textContent = displayedNum + '.'
+    }
   }
 
   // Recognise AC / clear key 
